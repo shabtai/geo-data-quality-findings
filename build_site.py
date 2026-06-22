@@ -120,10 +120,15 @@ def head(title, depth=0):
             f"<title>{esc(title)}</title><link rel=stylesheet href='{css}'></head><body><div class=wrap>")
 
 
+# Privacy-friendly analytics — Natural-Joints GoatCounter (added to every page).
+GOATCOUNTER = ('<script data-goatcounter="https://natural-joints.goatcounter.com/count" '
+               'async src="//gc.zgo.at/count.js"></script>')
+
 FOOT = ("<footer>Automated profiling + row-level audit of public NCBI&nbsp;GEO supplementary metadata, "
         "with headline findings re-confirmed by a tool-based verifier. "
         "Findings are data-quality hypotheses, not assertions about any downstream publication; "
-        "impact statements are risks. Severity reflects downstream impact.</footer></div></body></html>")
+        "impact statements are risks. Severity reflects downstream impact.</footer></div>"
+        + GOATCOUNTER + "</body></html>")
 
 
 def finding_card(f):
